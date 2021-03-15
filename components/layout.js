@@ -3,11 +3,15 @@ import Image from 'next/image'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import { useTheme } from 'next-themes'
 
 const title = 'today i learned'
 export const siteTitle = 'TIL Notes'
 
 export default function Layout({ children, home }) {
+
+    const { theme, setTheme } = useTheme()
+
     return (
         <div className={styles.container}>
             <Head>
@@ -19,6 +23,22 @@ export default function Layout({ children, home }) {
                 <meta name="og:title" content={siteTitle} />
             </Head>
             <header className={styles.header}>
+                <div
+                    className={styles.lightbulb}
+                    style={
+                        {
+                            display: `block`,
+                            width: `100%`,
+                            animationDuration: `1s`,
+                            animationFillMode: `both`,
+                            animationName: `fadeIn`,
+                            cursor: `pointer`
+                        }
+                    }
+
+                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+                    <i style={{ fontSize: `36px` }} className="far fa-lightbulb"></i>
+                </div>
                 {home ? (
                     <>
                         <Image
