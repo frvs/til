@@ -5,7 +5,7 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 
-const title = 'today i learned'
+const title = 'today i learned (hoje eu aprendi)'
 export const siteTitle = 'TIL Notes'
 
 export default function Layout({ children, home }) {
@@ -18,7 +18,7 @@ export default function Layout({ children, home }) {
                 <link rel="icon" href="/favicon.ico" />
                 <meta
                     name="description"
-                    content="Today I Learned annotations. Made by Lucas Frois"
+                    content="Anotações do que Eu Aprendi Hoje. Feito por Lucas Frois"
                 />
                 <meta name="og:title" content={siteTitle} />
             </Head>
@@ -49,7 +49,7 @@ export default function Layout({ children, home }) {
                             alt={title}
                         />
                         <h1 className={utilStyles.heading2Xl}>{title}</h1>
-                        <h2 className={utilStyles.headingMd}>made by <a target="_blank" href="https://frvs.com.br" rel="noreferrer">frvs</a></h2>
+                        <h2 className={utilStyles.headingMd}>feito por <a target="_blank" href="https://frvs.com.br" rel="noreferrer">frvs</a></h2>
                     </>
                 ) : (
                     <>
